@@ -12,8 +12,8 @@ const Button: React.FC<ButtonProps> = ({
   label,
   secondary,
   fullWidth,
-  large,
   onClick,
+  large,
   disabled,
   outline,
 }) => {
@@ -24,9 +24,10 @@ const Button: React.FC<ButtonProps> = ({
       className={`
         disabled:opacity-70
         disabled:cursor-not-allowed
-        rounded-fullWidthfont-semibold
+        rounded-full
+        font-semibold
         hover:opacity-80
-        transtion
+        transition
         border-2
         ${fullWidth ? "w-full" : "w-fit"}
         ${secondary ? "bg-white" : "bg-sky-500"}
