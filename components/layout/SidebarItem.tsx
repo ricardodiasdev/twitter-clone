@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { IconType } from "react-icons/";
-import useCurrentuser from "@/hooks/useCurrentUser";
-import useLoginModal from "@/hooks/useLoginModal";
+import useCurrentuser from "../../hooks/useCurrentUser";
+import useLoginModal from "../../hooks/useLoginModal";
 
 interface SidebarItemProps {
   label: string;
