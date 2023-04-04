@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import serverAuth from "../../../libs/serverAuth";
-import prisma from "../../../libs/prismadb";
+import serverAuth from "@/libs/serverAuth";
+import prisma from "@/libs/prismadb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST' && req.method !== 'GET') {
@@ -34,10 +34,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (userId && typeof userId === 'string') {
         posts = await prisma.post.findMany({
           where: {
-            userId: userId,
+            userId
           },
           include: {
-            User: true,
+            user: true,
             comments: true
           },
           orderBy: {
@@ -47,7 +47,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         posts = await prisma.post.findMany({
           include: {
-            User: true,
+            user: true,
             comments: true
           },
           orderBy: {
